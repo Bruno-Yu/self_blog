@@ -7,9 +7,10 @@ import Footer from '../components/Footer.tsx'
 import routes from '../routes.ts';
 
 export default function () {
+  console.log('routes', routes)
     return (
-        <main className="container min-h-screen mx-auto max-w-screen-lg">
-          <Menu />
+        <div className="container min-h-screen mx-auto max-w-screen-lg">
+          <Menu />      
               <Routes>
                 {routes.map((route, idx)=>{
                   return(
@@ -18,6 +19,7 @@ export default function () {
                 })}
               </Routes>
           <Footer />
-        </main>
+
+        </div>
       );
 }

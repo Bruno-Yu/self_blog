@@ -3,11 +3,11 @@ import { Button, Navbar } from "flowbite-react";
 const navData =[
     {
         title: '首頁',
-        link: '#'
+        link: '/'
     },
     {
         title: '作品集',
-        link: '#'
+        link: '/works'
     },
     {
         title: '服務項目',
@@ -27,10 +27,9 @@ export default function () {
   return (
     <Navbar fluid rounded>
       <Navbar.Brand href="#">
-        <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Bruno</span>
+        <span className=" whitespace-nowrap text-xl font-semibold dark:text-white">Bruno</span>
       </Navbar.Brand>
       <div className="flex md:order-2">
-        {/* <Button>Get started</Button> */}
         <Navbar.Toggle />
       </div>
       <Navbar.Collapse>
