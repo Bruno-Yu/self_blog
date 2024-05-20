@@ -1,6 +1,7 @@
 
 import { Pagination } from "flowbite-react";
 import { useState } from "react";
+import { NavLink } from 'react-router-dom';
 
 const experience = [
     {
@@ -85,25 +86,32 @@ return (
 );
 }
 
-export function CustomPagination() {
-    const [currentPage, setCurrentPage] = useState(1);
+export function CustomPagination({ currentPage ,totalPage}) {
+  // const [currentPage, setCurrentPage] = useState(1);
+  // const onPageChange = (page: number) => setCurrentPage(page);
   
-    const onPageChange = (page: number) => setCurrentPage(page);
-  
-    return (
-      <div className="flex overflow-x-auto sm:justify-center">
-        <Pagination currentPage={currentPage} totalPages={3} onPageChange={onPageChange} />
-      </div>
-    );
-  }
+  return (
+    <>
+    <div className="flex justify-center">
+      <nav aria-label="Page navigation example">
+        <ul className="flex items-center h-8 text-sm">
+          {Array(totalPage).fill(null).map((e, idx)=> (<><li>
+            <NavLink to={'/works'} aria-current={(currentPage === (idx+1))? 'page': false}   className="flex items-center justify-center px-3 h-8 rounded leading-tight text-black active:text-white bg-white active:bg-black hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">{idx+1}</NavLink>
+            </li></>))}
+        </ul>
+      </nav>
+    </div>
+    </>
+  )
+}
 
 export function ExperienceCard({title, content}) {
     const description = content.join('、')
 
     return (<>
     <li className="w-full sm:max-w-[300px]">
-        <p className="text-center text-sm">{title}</p>
-        <p className="text-center text-wrap">{ description}</p>
+        <p className="relative text-center text-sm mb-2 text-[#5B5B5B] after:content-[''] after:block after:border-b-[2px] after:border-[#c1c1c1] after:absolute after:w-6 after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:translate-y-1  after:z-50">{title}</p>
+        <p className="text-center text-[#3B3B3B] text-wrap">{ description}</p>
     </li>
     </>)
 }
@@ -112,13 +120,13 @@ export function ExperienceCard({title, content}) {
 export default function (){
     return (<>
     <div className="container mx-auto min-[992px] max-w-[1296px] border p-3">
-        <div className="py-32">
-            <p className="text-xl text-center leading-relaxed">讓使用者在觀賞與使用的旅程中，發現設計的價值</p>
-            <p className="text-xl text-center leading-relaxed">而我在設計與開發的過程中，看見自己的價值</p>
+        <div className="py-20 sm:py-32">
+            <p className="text-xl text-center leading-relaxed">讓使用者在觀賞與使用的旅程中，發現<span className="bg-[url('src/assets/images/mark.png')] bg-bottom bg-no-repeat p-0">設計的價值</span></p>
+            <p className="text-xl text-center leading-relaxed">而我在設計與開發的過程中，看見<span className="bg-[url('src/assets/images/mark.png')] bg-bottom bg-no-repeat p-0">自己的價值</span></p>
             <div>
 
             </div>
-            <ul className="flex flex-col sm:flex-row sm:justify-between w-full sm:w-2/3 mx-auto pt-10">
+            <ul className="flex flex-col sm:flex-row sm:justify-between w-full gap-x-2 gap-y-4 sm:w-2/3 mx-auto pt-10">
                 {
                     experience.map((e, idx)=> <ExperienceCard key={idx} title={e.title} content={e.content} />)
                 }
@@ -131,7 +139,7 @@ export default function (){
           ))}
         </ul>
         {/* pagination */}
-        <CustomPagination />
+        <CustomPagination currentPage={1} totalPage={3} />
       </div>
     </>)
 }
