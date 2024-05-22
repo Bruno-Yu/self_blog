@@ -19,7 +19,8 @@ export default function () {
 
     return (
         <>
-            <footer className="px-2 sm:px-4 py-8 flex flex-col items-center gap-y-2 sm:flex-row sm:justify-between bg-[url('src/assets/images/footer-bg-sm.png')] sm:bg-[url('src/assets/images/footer-bg-lg.png')] bg-cover">
+            <footer className=" bg-[url('src/assets/images/footer-bg-sm.png')] sm:bg-[url('src/assets/images/footer-bg-lg.png')] bg-cover">
+            <div className="container mx-auto min-[992px] max-w-[1296px] px-2 sm:px-4 py-8 flex flex-col items-center gap-y-2 sm:flex-row sm:justify-between">
                 <div className="">
                     <p className="text-xl text-center sm:text-left font-bold mb-2">Bruno</p>
                     <p className="text-[#3B3B3B] text-sm mb-2">若有數位產品設計和開發相關問題<br/>歡迎填單，或直接跟我聯絡</p>
@@ -38,6 +39,7 @@ export default function () {
                         </Fragment>))
                     }
                 </ul>
+            </div>
             </footer>
         </>
     )
