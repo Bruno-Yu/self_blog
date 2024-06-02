@@ -1,6 +1,5 @@
 
-import { Pagination } from "flowbite-react";
-import { useState } from "react";
+import {getImageUrl} from '../utils/index';
 import { NavLink } from 'react-router-dom';
 
 const experience = [
@@ -19,54 +18,57 @@ const experience = [
 const cardList = [
     {
       imgLink:
-        "src/assets/images/work-image1.png",
+        "work-image1",
       title: "星際旅遊訂票平台",
       description: "悠遊宇宙的夢想",
       tags: ["網頁", "響應", "Bootstrap"]
     },
     {
       imgLink:
-        "src/assets/images/work-image2.png",
+        "work-image2",
       title: "理財App",
       description: "連動帳戶與行動支付，讓 AI 提供您最好的理財建議",
       tags: ["APP設計", "iOS", "React"]
     },
     {
       imgLink:
-        "src/assets/images/work-image3.png",
+        "work-image3",
       title: "醫美診所官網",
       description: "永保青春的秘密，從粹究開始",
       tags: ["網頁設計", "響應式設計", "ＷordPress"]
     },
     {
       imgLink:
-        "src/assets/images/work-image4.png",
+        "work-image4",
       title: "美美美早餐店 POS 機 UI Design",
       description: "訂單送單一目瞭然，自動報表分析好輕鬆",
       tags: ["UI 設計", "前端開發", "Wix"]
     },
     {
       imgLink:
-        "src/assets/images/work-image5.png",
+        "work-image5",
       title: "電影院訂票系統",
       description: "三步驟完成訂票，電腦手機都支援",
       tags: ["前端開發", "後端支援", "Vue"]
     },
     {
       imgLink:
-        "src/assets/images/work-image6.png",
+        "work-image6",
       title: "巧克巧克形象官網設計",
       description: "三步驟完成訂票，電腦手機都支援",
       tags: ["UI設計", "設計系統", "網路電商"]
     }
   ];
+
+type card = typeof cardList[number]
+
   
-function Card({ data }) {
+function Card({ data }: {data: card}) {
 return (
     <>
     <li>
         <img
-        src={data.imgLink}
+        src={getImageUrl(data.imgLink)}
         alt={data.imgLink}
         className="w-full h-auto rounded-lg"
         />
@@ -86,9 +88,7 @@ return (
 );
 }
 
-export function CustomPagination({ currentPage ,totalPage}) {
-  // const [currentPage, setCurrentPage] = useState(1);
-  // const onPageChange = (page: number) => setCurrentPage(page);
+export function CustomPagination({ currentPage ,totalPage}: {currentPage: number; totalPage:number}) {
   
   return (
     <>
@@ -105,7 +105,7 @@ export function CustomPagination({ currentPage ,totalPage}) {
   )
 }
 
-export function ExperienceCard({title, content}) {
+export function ExperienceCard({title, content}: {title: string, content: string[]}) {
     const description = content.join('、')
 
     return (<>

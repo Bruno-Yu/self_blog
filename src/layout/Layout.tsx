@@ -1,7 +1,6 @@
 
 // import { Children } from 'react'
-import React, {Suspense} from 'react'
-import { Navigate, Route, Routes,  } from 'react-router-dom'
+import { Route, Routes,  } from 'react-router-dom'
 import Menu  from '../components/Ｍenu.tsx'
 import Footer from '../components/Footer.tsx'
 import routes from '../routes.ts';

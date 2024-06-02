@@ -1,27 +1,5 @@
-import { Button, Navbar } from "flowbite-react";
-
-const navData =[
-    {
-        title: '首頁',
-        link: '/'
-    },
-    {
-        title: '作品集',
-        link: '/works'
-    },
-    {
-        title: '服務項目',
-        link: '#'
-    },
-    {
-        title: '部落格',
-        link: '#'
-    },
-    {
-        title: '聯絡我',
-        link: '#'
-    },
-]
+import { Navbar } from "flowbite-react";
+import routes from '../routes.ts';
 
 export default function () {
   return (
@@ -33,7 +11,7 @@ export default function () {
         <Navbar.Toggle />
       </div>
       <Navbar.Collapse>
-        { navData.map((nav)=>(<Navbar.Link href={nav.link} key={nav.title} >
+        { routes.map((nav)=>(<Navbar.Link href={nav.path} key={nav.name} >
           {nav.title}
         </Navbar.Link>)) }
       </Navbar.Collapse>

@@ -1,14 +1,13 @@
 import {Icon} from "@iconify/react"
 import { Fragment } from "react/jsx-runtime"
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
-
+import { Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { getImageUrl } from "../utils/index"
 
 // Import Swiper styles
 import 'swiper/css';
-import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
+
 
 function Banner () {
     const imgList = [
@@ -42,8 +41,8 @@ function Banner () {
                 </div>
             </div>
         </div>
-        <img className="hidden sm:block w-3/5 h-auto" src="src/assets/images/hero-lg.png" alt="hero-lg" />
-        <img className="block sm:hidden w-full h-auto" src="src/assets/images/hero-sm.png" alt="hero-sm" />
+        <img className="hidden sm:block w-3/5 h-auto" src={getImageUrl('hero-lg')} alt="hero-lg" />
+        <img className="block sm:hidden w-full h-auto" src={getImageUrl('hero-sm')} alt="hero-sm" />
     </div>
     </>)
 }
@@ -60,42 +59,42 @@ function Title ({title}: {title:string}) {
 const cardList = [
     {
       imgLink:
-        "src/assets/images/article-image1.png",
+        "article-image1",
       title: "Vision Pro 登場！Vision Pro UI/UX 設計重點大公開 (上)",
       tag: "UI/UX 新知",
       date: '2024/02/10'
     },
     {
         imgLink:
-          "src/assets/images/article-image2.png",
+          "article-image2",
         title: "給設計師和工程師的 Figma-Dev Mode 開發模式使用指南 (下)",
         tag: "UI/UX 新知",
         date: '2023/11/20'
       },
       {
         imgLink:
-          "src/assets/images/article-image3.png",
+          "article-image3",
         title: "給設計師和工程師的 Figma-Dev Mode 開發模式使用指南 (上)",
         tag: "UI/UX 新知",
         date: '2023/10/18'
       },
     {
     imgLink:
-        "src/assets/images/article-image4.png",
+        "article-image4",
     title: "給設計師和工程師的 Figma-Dev Mode 開發模式使用指南 (上)",
     tag: "UI/UX 新知",
     date: '2023/10/18'
     },
     {
     imgLink:
-        "src/assets/images/article-image5.png",
+        "article-image5",
     title: "給設計師和工程師的 Figma-Dev Mode 開發模式使用指南 (上)",
     tag: "UI/UX 新知",
     date: '2023/10/18'
     },
     {
     imgLink:
-        "src/assets/images/article-image6.png",
+        "article-image6",
     title: "給設計師和工程師的 Figma-Dev Mode 開發模式使用指南 (上)",
     tag: "UI/UX 新知",
     date: '2023/10/18'
@@ -116,10 +115,10 @@ function Carousel() {
                     slidesPerView={3}
                     pagination={{ clickable: true }}
                     >
-                        {cardList.map((e, idx)=> (<>
-                            <SwiperSlide key={idx}>
+                        {cardList.map((e, idx)=> (< Fragment key={idx}>
+                            <SwiperSlide>
                                 <div className="flex flex-col gap-y-2">
-                                    <img className="rounded-lg w-full h-auto" src={e.imgLink} alt={e.imgLink} />
+                                    <img className="rounded-lg w-full h-auto" src={getImageUrl(e.imgLink)} alt={e.imgLink} />
                                     <p className="font-bold text-lg">{e.title}</p>
                                     <div className="flex justify-between">
                                         <div className="text-xs font-thin bg-[#F1F1F1] rounded-full py-0.5 px-2">
@@ -129,7 +128,7 @@ function Carousel() {
                                     </div>
                                 </div>
                         </SwiperSlide>
-                        </>))}
+                        </ Fragment>))}
                     </Swiper>
                     </div>
                 </div>
@@ -139,6 +138,7 @@ function Carousel() {
 
 
 export default function (){
+
     return (<>
     <Banner/>
     <Carousel/>
