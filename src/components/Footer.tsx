@@ -1,5 +1,6 @@
 import {Icon} from "@iconify/react"
 import { Fragment } from "react/jsx-runtime"
+// import { getImageUrl } from "../utils/index"
 
 export default function () {
     const list = [
@@ -17,9 +18,15 @@ export default function () {
         }
     ]
 
+    // const generateBgClass= (): string=> {
+    //     return `bg-[url('assets/images/footer-bg-lg.png')] sm:bg-[url('${getImageUrl('hero-lg')}')] bg-cover`
+    //     // return `bg-[url('${getImageUrl('footer-bg-sm')}')] sm:bg-[url('${getImageUrl('hero-lg')}')] bg-cover`
+    // }
+
     return (
         <>
-            <footer className=" bg-[url('src/assets/images/footer-bg-sm.png')] sm:bg-[url('src/assets/images/footer-bg-lg.png')] bg-cover">
+            <footer className="bg-[url('assets/images/footer-bg-lg.png')] sm:bg-[url('assets/images/footer-bg-lg.png')] bg-cover">
+            {/* <footer className={generateBgClass()}> */}
             <div className="container mx-auto min-[992px] max-w-[1296px] px-2 sm:px-4 py-8 flex flex-col items-center gap-y-2 sm:flex-row sm:justify-between">
                 <div className="">
                     <p className="text-xl text-center sm:text-left font-bold mb-2">Bruno</p>

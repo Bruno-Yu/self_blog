@@ -11,6 +11,7 @@ export default function () {
           <Menu />      
               <Routes>
                 {routes.map((route, idx)=>{
+                  console.log('route.exact', route)
                   return(
                     route.element && (<Route key={idx} path={route.path} exact={route.exact} name={route.name} element={<route.element/>} />)
                   )
