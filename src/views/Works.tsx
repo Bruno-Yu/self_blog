@@ -119,7 +119,7 @@ export function ExperienceCard({title, content}: {title: string, content: string
 
 export default function (){
     return (<>
-    <div className="container mx-auto min-[992px] max-w-[1296px] border p-3">
+    <div className="container mx-auto min-[992px] max-w-[1296px] p-3">
         <div className="py-20 sm:py-32">
             <p className="text-xl text-center leading-relaxed">讓使用者在觀賞與使用的旅程中，發現<span className="bg-[url('src/assets/images/mark.png')] bg-bottom bg-no-repeat p-0">設計的價值</span></p>
             <p className="text-xl text-center leading-relaxed">而我在設計與開發的過程中，看見<span className="bg-[url('src/assets/images/mark.png')] bg-bottom bg-no-repeat p-0">自己的價值</span></p>
