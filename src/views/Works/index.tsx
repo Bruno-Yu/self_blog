@@ -1,9 +1,10 @@
-import { useRef, useState } from 'react'
+import { useRef, useState, useEffect } from 'react'
 import Card from '../../components/Works/Card'
 import ExperienceCard from '../../components/Works/ExperienceCard'
 import Pagination from '../../components/Works/Pagination'
 import Modal from '@/components/common/Modal'
 import ModalContent from '../../components/Works/ModalContent'
+import { useAttractions } from '@/api/attraction'
 
 const EXPERIENCES = [
   {
@@ -92,6 +93,16 @@ export default function () {
     setDialogContent(item)
     dialog.current.open()
   }
+
+  const attractionsApi = useAttractions()
+
+  useEffect(() => {
+    async function getAttractions() {
+      const result = await attractionsApi.queryWorks()
+      console.log('result', result)
+    }
+    getAttractions()
+  }, [])
   return (
     <>
       <div className="container mx-auto min-[992px] max-w-[1296px] p-3">
