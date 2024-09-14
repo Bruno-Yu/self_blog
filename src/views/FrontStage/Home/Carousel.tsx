@@ -3,7 +3,7 @@ import { Fragment } from 'react/jsx-runtime'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { getImageUrl, getResponsiveValue } from '@/utils/index'
 import { useResponsiveValue } from '@/Hooks/useResponsiveValue'
-import Title from '../../components/Home/Title'
+import Title from '../../../components/Home/Title'
 import 'swiper/css'
 import 'swiper/css/pagination'
 

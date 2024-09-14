@@ -1,6 +1,6 @@
 import { FunctionComponent } from 'react'
-import ServiceCard from '../../components/Home/ServiceCard'
-import Title from '../../components/Home/Title'
+import ServiceCard from '../../../components/Home/ServiceCard'
+import Title from '../../../components/Home/Title'
 
 const SERVICES = [
   {

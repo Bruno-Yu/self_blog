@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux'
 import { Navbar } from 'flowbite-react'
-import routes from '@/routes.ts'
+import { frontRoutes } from '@/routes.ts'
 
 export default function () {
   const userName = useSelector((state) => state.user.name)
@@ -16,7 +16,7 @@ export default function () {
         <Navbar.Toggle />
       </div>
       <Navbar.Collapse>
-        {routes.map((nav) => (
+        {frontRoutes.map((nav) => (
           <Navbar.Link href={nav.path} key={nav.name}>
             {nav.title}
           </Navbar.Link>

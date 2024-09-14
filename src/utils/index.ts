@@ -28,3 +28,30 @@ export const getResponsiveValue = (breakpoints, currentWidth = null) => {
     ? matchedBreakpoint[1]
     : sortedBreakpoints[sortedBreakpoints.length - 1][1]
 }
+
+/**
+ * window.localStorage
+ * @method set
+ * @method get
+ * @method remove
+ * @method clear
+ */
+export const Local = {
+  setKey(key: string) {
+    // @ts-ignore
+    return `${key}`
+  },
+  set<T>(key: string, val: T) {
+    window.localStorage.setItem(Local.setKey(key), JSON.stringify(val))
+  },
+  get(key: string) {
+    let json = <string>window.localStorage.getItem(Local.setKey(key))
+    return JSON.parse(json)
+  },
+  remove(key: string) {
+    window.localStorage.removeItem(Local.setKey(key))
+  },
+  clear() {
+    window.localStorage.clear()
+  },
+}
