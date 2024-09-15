@@ -82,13 +82,13 @@ export const frontRoutes = [
     element: Works,
     title: '作品集',
   },
-  {
-    path: `${import.meta.env.BASE_URL}service`,
-    exact: true,
-    name: 'Service',
-    element: Home,
-    title: '服務項目',
-  },
+  // {
+  //   path: `${import.meta.env.BASE_URL}service`,
+  //   exact: true,
+  //   name: 'Service',
+  //   element: Home,
+  //   title: '服務項目',
+  // },
   {
     path: `${import.meta.env.BASE_URL}blog`,
     exact: true,
@@ -96,13 +96,13 @@ export const frontRoutes = [
     element: Home,
     title: '部落格',
   },
-  {
-    path: `${import.meta.env.BASE_URL}contact`,
-    exact: true,
-    name: 'Contact',
-    element: Home,
-    title: '聯絡我',
-  },
+  // {
+  //   path: `${import.meta.env.BASE_URL}contact`,
+  //   exact: true,
+  //   name: 'Contact',
+  //   element: Home,
+  //   title: '聯絡我',
+  // },
   {
     path: `${import.meta.env.BASE_URL}login`,
     exact: true,
