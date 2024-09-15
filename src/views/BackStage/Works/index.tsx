@@ -27,7 +27,7 @@ import { getImageUrl } from '@/utils/index'
 // import NavbarSidebarLayout from '../../layouts/navbar-sidebar'
 // import { Pagination } from '../users/list'
 
-const EcommerceContentsPage: FC = function () {
+const WorkContentsPage: FC = function () {
   const attractionsApi = useAttractions()
   const [works, setWorks] = useState()
   useEffect(() => {
@@ -107,115 +107,6 @@ const EcommerceContentsPage: FC = function () {
         </div>
       </div>
       {/* <Pagination /> */}
-    </>
-  )
-}
-
-const SearchForContents: FC = function () {
-  return (
-    <form className="mb-4 sm:mb-0 sm:pr-3" action="#" method="GET">
-      <Label htmlFor="Contents-search" className="sr-only">
-        Search
-      </Label>
-      <div className="relative mt-1 lg:w-64 xl:w-96">
-        <TextInput
-          id="Contents-search"
-          name="Contents-search"
-          placeholder="Search for Contents"
-        />
-      </div>
-    </form>
-  )
-}
-
-const AddContentModal: FC = function () {
-  const [isOpen, setOpen] = useState(false)
-
-  return (
-    <>
-      <Button color="primary" onClick={() => setOpen(!isOpen)}>
-        <FaPlus className="mr-3 text-sm" />
-        Add Content
-      </Button>
-      <Modal onClose={() => setOpen(false)} show={isOpen}>
-        <Modal.Header className="border-b border-gray-200 !p-6 dark:border-gray-700">
-          <strong>Add Content</strong>
-        </Modal.Header>
-        <Modal.Body>
-          <form>
-            <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
-              <div>
-                <Label htmlFor="ContentName">Content name</Label>
-                <TextInput
-                  id="ContentName"
-                  name="ContentName"
-                  placeholder='Apple iMac 27"'
-                  className="mt-1"
-                />
-              </div>
-              <div>
-                <Label htmlFor="category">Category</Label>
-                <TextInput
-                  id="category"
-                  name="category"
-                  placeholder="Electronics"
-                  className="mt-1"
-                />
-              </div>
-              <div>
-                <Label htmlFor="brand">Brand</Label>
-                <TextInput
-                  id="brand"
-                  name="brand"
-                  placeholder="Apple"
-                  className="mt-1"
-                />
-              </div>
-              <div>
-                <Label htmlFor="price">Price</Label>
-                <TextInput
-                  id="price"
-                  name="price"
-                  type="number"
-                  placeholder="$2300"
-                  className="mt-1"
-                />
-              </div>
-              <div className="lg:col-span-2">
-                <Label htmlFor="Contentable.Celletails">Content details</Label>
-                <Textarea
-                  id="Contentable.Celletails"
-                  name="Contentable.Celletails"
-                  placeholder="e.g. 3.8GHz 8-core 10th-generation Intel Core i7 processor, Turbo Boost up to 5.0GHz, Ram 16 GB DDR4 2300Mhz"
-                  rows={6}
-                  className="mt-1"
-                />
-              </div>
-              <div className="lg:col-span-2">
-                <div className="flex w-full items-center justify-center">
-                  <label className="flex h-32 w-full cursor-pointer flex-col rounded border-2 border-dashed border-gray-300 hover:bg-gray-50 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-700">
-                    <div className="flex flex-col items-center justify-center pt-5 pb-6">
-                      <HiUpload className="text-4xl text-gray-300" />
-                      <p className="py-1 text-sm text-gray-600 dark:text-gray-500">
-                        Upload a file or drag and drop
-                      </p>
-                      <p className="text-xs text-gray-500 dark:text-gray-400">
-                        PNG, JPG, GIF up to 10MB
-                      </p>
-                    </div>
-                    <input type="file" className="hidden" />
-                  </label>
-                </div>
-              </div>
-            </div>
-          </form>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button color="primary" onClick={() => setOpen(false)}>
-            Add Content
-          </Button>
-        </Modal.Footer>
-      </Modal>
     </>
   )
 }
@@ -355,118 +246,6 @@ const AddOrEditModal: FC = function ({ Content = {}, isEditing = true }) {
   )
 }
 
-const EditContentModal: FC = function ({ Content }) {
-  const [isOpen, setOpen] = useState(false)
-  const [content, setContent] = useState(Content)
-
-  useEffect(() => {
-    setContent(content)
-  }, [Content])
-  return (
-    <>
-      <Button color="primary" onClick={() => setOpen(!isOpen)}>
-        <HiPencilAlt className="mr-2 text-lg" />
-        編輯作品
-      </Button>
-      <Modal onClose={() => setOpen(false)} show={isOpen}>
-        <Modal.Header className="border-b border-gray-200 !p-6 dark:border-gray-700">
-          <strong>編輯作品</strong>
-        </Modal.Header>
-        <Modal.Body>
-          <form>
-            <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
-              <div>
-                <Label htmlFor="ContentName">作品名</Label>
-                <TextInput
-                  id="ContentName"
-                  name="ContentName"
-                  placeholder='Apple iMac 27"'
-                  className="mt-1"
-                  value={content.title}
-                />
-              </div>
-              <div>
-                <Label htmlFor="category">類別</Label>
-                <TextInput
-                  id="category"
-                  name="category"
-                  placeholder="Electronics"
-                  className="mt-1"
-                />
-              </div>
-              <div>
-                <Label htmlFor="category">GitHub</Label>
-                <TextInput
-                  id="github"
-                  name="github"
-                  placeholder="url"
-                  className="mt-1"
-                  value={content.gitHubUrl}
-                />
-              </div>
-              <div>
-                <Label htmlFor="category">Demo Page</Label>
-                <TextInput
-                  id="demoPage"
-                  name="demoPage"
-                  placeholder="url"
-                  className="mt-1"
-                  value={content.gitPageUrl}
-                />
-              </div>
-              <div className="lg:col-span-2">
-                <Label htmlFor="ContentDetails">描述</Label>
-                <Textarea
-                  id="ContentDetails"
-                  name="ContentDetails"
-                  placeholder="e.g. 3.8GHz 8-core 10th-generation Intel Core i7 processor, Turbo Boost up to 5.0GHz, Ram 16 GB DDR4 2300Mhz"
-                  rows={6}
-                  className="mt-1"
-                  value={content.description}
-                />
-              </div>
-              <div className="flex space-x-5">
-                <div>
-                  <img
-                    alt={content.imgUrl}
-                    src={getImageUrl(content.imgUrl)}
-                    className="h-24"
-                  />
-                  <a href="#" className="cursor-pointer">
-                    <span className="sr-only">Delete</span>
-                    <HiTrash className="-mt-5 text-2xl text-red-600" />
-                  </a>
-                </div>
-              </div>
-              <div className="lg:col-span-2">
-                <div className="flex w-full items-center justify-center">
-                  <label className="flex h-32 w-full cursor-pointer flex-col rounded border-2 border-dashed border-gray-300 hover:bg-gray-50 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-700">
-                    <div className="flex flex-col items-center justify-center pt-5 pb-6">
-                      <HiUpload className="text-4xl text-gray-300" />
-                      <p className="py-1 text-sm text-gray-600 dark:text-gray-500">
-                        Upload a file or drag and drop
-                      </p>
-                      <p className="text-xs text-gray-500 dark:text-gray-400">
-                        PNG, JPG, GIF up to 10MB
-                      </p>
-                    </div>
-                    <input type="file" className="hidden" />
-                  </label>
-                </div>
-              </div>
-            </div>
-          </form>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button color="primary" onClick={() => setOpen(false)}>
-            Save all
-          </Button>
-        </Modal.Footer>
-      </Modal>
-    </>
-  )
-}
-
 const DeleteContentModal: FC = function () {
   const [isOpen, setOpen] = useState(false)
 
@@ -474,7 +253,7 @@ const DeleteContentModal: FC = function () {
     <>
       <Button color="failure" onClick={() => setOpen(!isOpen)}>
         <HiTrash className="mr-2 text-lg" />
-        Delete item
+        刪除
       </Button>
       <Modal onClose={() => setOpen(false)} show={isOpen} size="md">
         <Modal.Header className="px-3 pt-3 pb-0">
@@ -516,7 +295,7 @@ const ContentsTable: FC = function ({ tableData }) {
         <Table.HeadCell>分類</Table.HeadCell>
         <Table.HeadCell>描述</Table.HeadCell>
         {/* <Table.HeadCell>Price</Table.HeadCell> */}
-        <Table.HeadCell>Actions</Table.HeadCell>
+        <Table.HeadCell>操作</Table.HeadCell>
       </Table.Head>
       <Table.Body className="divide-y divide-gray-200 bg-white dark:divide-gray-700 dark:bg-gray-800">
         {/* one Row Data */}
@@ -555,4 +334,4 @@ const ContentsTable: FC = function ({ tableData }) {
   )
 }
 
-export default EcommerceContentsPage
+export default WorkContentsPage

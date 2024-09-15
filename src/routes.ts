@@ -3,7 +3,7 @@ import React from 'react'
 const Home = React.lazy(() => import('./views/FrontStage/Home/index'))
 const Works = React.lazy(() => import('./views/FrontStage/Works/index'))
 const Login = React.lazy(() => import('./views/FrontStage/Login/index'))
-const Contents = React.lazy(() => import('./views/BackStage/Contents/index'))
+const Contents = React.lazy(() => import('./views/BackStage/Works/index'))
 const Users = React.lazy(() => import('./views/BackStage/Users/index'))
 
 const routes = [
@@ -90,10 +90,10 @@ export const frontRoutes = [
   //   title: '服務項目',
   // },
   {
-    path: `${import.meta.env.BASE_URL}blog`,
+    path: 'https://bruno-yu.github.io/bruno_blog/',
     exact: true,
     name: 'Blog',
-    element: Home,
+    // element: Home,
     title: '部落格',
   },
   // {

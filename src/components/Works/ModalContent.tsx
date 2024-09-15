@@ -29,7 +29,7 @@ function ModalContent({ content }) {
       {/* demo */}
       <div className="bg-[#FAFAFA] p-12 ">
         <img
-          src={getImageUrl(content.imgUrl)}
+          src={content.imgUrl}
           alt={content.imgUrl}
           className="w-full h-auto rounded-2xl"
         />

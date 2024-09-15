@@ -5,7 +5,7 @@ function Card({ data, children, ...props }) {
     <>
       <li {...props}>
         <img
-          src={getImageUrl(data.imgLink)}
+          src={data.imgLink}
           alt={data.imgLink}
           className="w-full h-auto rounded-lg"
         />
@@ -13,7 +13,7 @@ function Card({ data, children, ...props }) {
           <p className="font-bold text-lg">{data.title}</p>
           <p className="text-[#919191] text-sm">{data.description}</p>
         </div>
-        <ul className="flex gap-x-6 gap-y-20 pt-3">
+        <ul className="flex gap-x-2 gap-y-20 pt-3">
           {data.tags.map((item, idx) => (
             <li
               key={idx}

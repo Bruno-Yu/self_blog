@@ -18,22 +18,12 @@ const SignInPage: FC = function () {
   }
 
   return (
-    <div className="flex flex-col items-center justify-center px-6 lg:h-screen lg:gap-y-12">
-      <div className="my-6 flex items-center gap-x-1 lg:my-0">
-        {/* <img
-          alt="Flowbite logo"
-          src="https://flowbite.com/docs/images/logo.svg"
-          className="mr-3 h-12"
-        /> */}
-        <span className="self-center whitespace-nowrap text-2xl font-semibold dark:text-white">
-          Manage Blog
-        </span>
-      </div>
+    <div className="flex flex-col items-center pt-36 px-6 lg:h-screen lg:gap-y-12">
       <Card
         horizontal
         imgSrc={getImageUrl('article-image6')}
         imgAlt=""
-        className="max-w-5 md:max-w-screen-sm [&>img]:hidden md:[&>img]:w-64 md:[&>img]:p-0 md:[&>*]:w-full md:[&>*]:p-16 lg:[&>img]:block"
+        className="w-[80%] max-w-[1000px]  md:max-w-screen [&>img]:hidden md:[&>img]:w-80 md:[&>img]:p-0 md:[&>*]:w-full md:[&>*]:p-16 lg:[&>img]:block"
       >
         <h1 className="mb-3 text-2xl font-bold dark:text-white md:text-3xl">
           登入
@@ -62,12 +52,12 @@ const SignInPage: FC = function () {
               <Checkbox id="rememberMe" name="rememberMe" />
               <Label htmlFor="rememberMe">記住我</Label>
             </div>
-            <a
+            {/* <a
               href="#"
               className="w-1/2 text-right text-sm text-primary-600 dark:text-primary-300"
             >
               忘記密碼?
-            </a>
+            </a> */}
           </div>
           <div className="mb-6 border">
             <Button type="button" className="w-full" onClick={login}>

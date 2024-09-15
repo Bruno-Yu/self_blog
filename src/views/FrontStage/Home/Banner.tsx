@@ -20,14 +20,21 @@ const imgList = [
 const SELF_CONTENT = {
   siteName: 'Bruno',
   briefIntro: 'Hi! 我是 Bruno',
-  content: '是名前端開發者',
-  about: '具有 2 年經驗的前端工程師\n熱衷於優化使用者的網頁體驗 ',
-  hashTags: ['WEB DEVELOPMENT', 'FRONTEND'],
+  // content: '是名前端開發者',
+  // content:
+  //   '我是余俊毅（Bruno Yu），來自臺南市的前端開發工程師，擁有近兩年的前端開發與專案管理經驗。我的技術專長涵蓋 Vue3、Nuxt3、Pinia 以及 React 等前端框架，並且熱衷於探索最新的技術與工具。作為團隊中的一員，我積極參與專案開發，具備出色的溝通協作能力，並樂於分享知識，幫助團隊在有限時間內成功交付專案。',
+  about:
+    '來自臺南市的前端開發工程師，擁有近兩年的前端開發與專案管理經驗。我的技術專長涵蓋 Vue3、Nuxt3、Pinia 以及 React 等前端框架，並且熱衷於探索最新的技術與工具。我認為，技術應該是解決問題的工具，而非目標。因此，我不僅追求寫出乾淨的程式碼，還不斷思考如何以更聰明的方式解決複雜的問題。',
+  // about: '具有 2 年經驗的前端工程師\n熱衷於優化使用者的網頁體驗 ',
+  hashTags: ['WEB DEVELOPMENT', 'FRONTEND DEVELOPER'],
   // avatar: {
   //   pc: `${imgPath}/images/avatar.webp`,
   //   mobile: `${imgPath}/images/avatar.webp`,
   // },
 }
+// 我是余俊毅（Bruno Yu），來自臺南市的前端開發工程師，擁有近兩年的前端開發與專案管理經驗。我的技術專長涵蓋 Vue3、Nuxt3、Pinia 以及 React 等前端框架，並且熱衷於探索最新的技術與工具。作為團隊中的一員，我積極參與專案開發，具備出色的溝通協作能力，並樂於分享知識，幫助團隊在有限時間內成功交付專案。
+
+// 我專注於建立直觀且高效的使用者體驗，無論是響應式網站設計、性能優化還是狀態管理，都力求達到最佳實踐。我認為，技術應該是解決問題的工具，而非目標。因此，我不僅追求寫出乾淨的程式碼，還不斷思考如何以更聰明的方式解決複雜的問題。
 
 const ICONS = {
   Github: IoLogoGithub,

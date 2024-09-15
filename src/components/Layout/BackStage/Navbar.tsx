@@ -22,14 +22,14 @@ const BackStageNavbar: FC = function () {
             <Navbar.Brand href="/">
               <img alt="" src="/images/logo.svg" className="mr-3 h-6 sm:h-8" />
               <span className="self-center whitespace-nowrap text-2xl font-semibold dark:text-white">
-                Flowbite
+                Bruno
               </span>
             </Navbar.Brand>
           </div>
           <div className="flex items-center gap-3">
             <iframe
               height="30"
-              src="https://ghbtns.com/github-btn.html?user=themesberg&repo=flowbite-react-admin-dashboard&type=star&count=true&size=large"
+              src="https://ghbtns.com/github-btn.html?user=Bruno-Yu&repo=self_blog&type=star&count=true&size=large"
               title="GitHub"
               width="90"
               className="hidden sm:block"
@@ -37,7 +37,7 @@ const BackStageNavbar: FC = function () {
             <Button type="button" color="primary" onClick={logout}>
               登出
             </Button>
-            <DarkThemeToggle />
+            {/* <DarkThemeToggle />  */}
           </div>
         </div>
       </div>

@@ -41,28 +41,12 @@ const BackStageSidebar: FC = function () {
                 href="contents"
                 icon={HiShoppingBag}
                 className={
-                  '/contents' === currentPage
+                  '/self_blogs/contents' === currentPage
                     ? 'bg-gray-100 dark:bg-gray-700'
                     : ''
                 }
               >
-                Contents
-              </Sidebar.Item>
-              <Sidebar.Item
-                href="users"
-                icon={HiShoppingBag}
-                className={
-                  '/users' === currentPage ? 'bg-gray-100 dark:bg-gray-700' : ''
-                }
-              >
-                Users
-              </Sidebar.Item>
-
-              <Sidebar.Item href="/authentication/sign-in" icon={HiLogin}>
-                Sign in
-              </Sidebar.Item>
-              <Sidebar.Item href="/authentication/sign-up" icon={HiPencil}>
-                Sign up
+                作品
               </Sidebar.Item>
             </Sidebar.ItemGroup>
           </Sidebar.Items>
