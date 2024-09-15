@@ -13,11 +13,11 @@ function Card({ data, children, ...props }) {
           <p className="font-bold text-lg">{data.title}</p>
           <p className="text-[#919191] text-sm">{data.description}</p>
         </div>
-        <ul className="flex gap-x-2 gap-y-20 pt-3">
+        <ul className="flex gap-x-2 gap-y-20 pt-3 overflow-hidden whitespace-nowrap">
           {data.tags.map((item, idx) => (
             <li
               key={idx}
-              className="text-xs font-thin bg-[#F1F1F1] rounded-full py-0.5 px-2"
+              className="text-xs font-thin bg-[#F1F1F1] rounded-full py-0.5 px-2 overflow-hidden text-ellipsis"
             >
               {item}
             </li>
