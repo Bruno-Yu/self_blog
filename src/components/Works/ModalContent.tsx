@@ -21,7 +21,7 @@ function ModalContent({ content }) {
             技術：{content.tags ? content.tags.join('、 ') : ''}
           </p>
           <p className="text-[#5B5B5B] leading-7">
-            連結：<Link to={content.gitHubUrl}>GitHub</Link>、：
+            連結：<Link to={content.gitHubUrl}>GitHub</Link>、
             <Link to={content.gitPageUrl}>GitHub Page</Link>
           </p>
         </div>
