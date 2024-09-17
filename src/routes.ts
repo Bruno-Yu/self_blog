@@ -4,7 +4,6 @@ const Home = React.lazy(() => import('./views/FrontStage/Home/index'))
 const Works = React.lazy(() => import('./views/FrontStage/Works/index'))
 const Login = React.lazy(() => import('./views/FrontStage/Login/index'))
 const Contents = React.lazy(() => import('./views/BackStage/Works/index'))
-const Users = React.lazy(() => import('./views/BackStage/Users/index'))
 
 const routes = [
   // {path: '/', exact: true, name: 'layout'},
@@ -115,18 +114,11 @@ export const frontRoutes = [
 export const backRoutes = [
   // {path: '/', exact: true, name: 'layout'},
   {
-    path: `${import.meta.env.BASE_URL}users`,
-    exact: true,
-    name: 'Users',
-    element: Users,
-    title: '使用者管理',
-  },
-  {
     path: `${import.meta.env.BASE_URL}contents`,
     exact: true,
     name: 'Contact',
     element: Contents,
-    title: '編輯內容',
+    title: '作品',
   },
 ]
 
