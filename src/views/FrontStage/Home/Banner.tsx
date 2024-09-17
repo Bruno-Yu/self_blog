@@ -61,7 +61,7 @@ function Banner() {
   return (
     <>
       <div className="flex flex-col-reverse sm:flex-row  sm:justify-between">
-        <div className="flex flex-col justify-center items-center sm:w-2/5 sm:px-2.5 ">
+        <div className="flex flex-col justify-center items-center sm:w-2/5 px-5 ">
           <div>
             <h1 className="text-2xl text-center sm:text-left font-bold mb-2.5">
               {SELF_CONTENT.briefIntro}

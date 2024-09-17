@@ -5,7 +5,7 @@ import type { FC, PropsWithChildren } from 'react'
 
 const MainContent: FC = function ({ children }) {
   return (
-    <div className="container min-h-screen mx-auto min-[992px] max-w-[1296px]">
+    <div className="container flex flex-col min-h-screen mx-auto min-[992px] max-w-[1296px]">
       <Menu />
       {children}
       <Footer />

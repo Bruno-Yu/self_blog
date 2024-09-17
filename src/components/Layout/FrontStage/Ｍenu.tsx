@@ -7,7 +7,7 @@ export default function () {
 
   return (
     <Navbar fluid rounded>
-      <Navbar.Brand href="#">
+      <Navbar.Brand href="/self_blog/">
         <span className=" whitespace-nowrap text-xl font-semibold dark:text-white">
           {userName}
         </span>

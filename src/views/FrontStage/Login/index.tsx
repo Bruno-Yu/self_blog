@@ -18,7 +18,7 @@ const SignInPage: FC = function () {
   }
 
   return (
-    <div className="flex flex-col items-center pt-36 px-6 lg:h-screen lg:gap-y-12">
+    <div className="flex flex-col items-center pt-24 xl:pt-36 px-6 lg:h-screen lg:gap-y-12">
       <Card
         horizontal
         imgSrc={getImageUrl('article-image6')}
@@ -36,6 +36,8 @@ const SignInPage: FC = function () {
               name="email"
               placeholder="name@company.com"
               type="email"
+              readOnly
+              value="admin@gmail.com"
             />
           </div>
           <div className="mb-6 flex flex-col gap-y-3">
@@ -44,12 +46,14 @@ const SignInPage: FC = function () {
               id="password"
               name="password"
               placeholder="••••••••"
+              readOnly
+              value="12345678"
               type="password"
             />
           </div>
           <div className="mb-6 flex items-center justify-between">
             <div className="flex items-center gap-x-3">
-              <Checkbox id="rememberMe" name="rememberMe" />
+              <Checkbox id="rememberMe" checked name="rememberMe" />
               <Label htmlFor="rememberMe">記住我</Label>
             </div>
             {/* <a
@@ -60,16 +64,14 @@ const SignInPage: FC = function () {
             </a> */}
           </div>
           <div className="mb-6 border">
-            <Button type="button" className="w-full" onClick={login}>
+            <Button
+              type="button"
+              className="w-full bg-slate-950"
+              onClick={login}
+            >
               登入
             </Button>
           </div>
-          {/* <p className="text-sm text-gray-500 dark:text-gray-300">
-            Not registered?&nbsp;
-            <a href="#" className="text-primary-600 dark:text-primary-300">
-              Create account
-            </a>
-          </p> */}
         </form>
       </Card>
     </div>
