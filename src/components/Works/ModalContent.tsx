@@ -13,10 +13,10 @@ function ModalContent({ content }) {
       </div>
       {/* content */}
       <div className="grid grid-cols-12 gap-2 w-full pb-6  px-6">
-        <div className="col-span-7 pr-7">
+        <div className="col-span-12 lg:col-span-7 pr-7">
           <p className="font-normal leading-7">{content.content}</p>
         </div>
-        <div className="col-span-5 border-l pl-7">
+        <div className="col-span-12 lg:col-span-5 lg:border-l lg:pl-7">
           <p className="text-[#5B5B5B] leading-7">
             技術：{content.tags ? content.tags.join('、 ') : ''}
           </p>

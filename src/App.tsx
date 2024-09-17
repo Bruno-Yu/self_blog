@@ -1,11 +1,9 @@
 import React, { Suspense, useEffect } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import { DarkThemeToggle } from 'flowbite-react'
+import { Spinner } from 'flowbite-react'
 import { Local } from '@/utils/index'
 import { useSelector, useDispatch } from 'react-redux'
 import { userActions } from '@/store/user-slice'
-// import { createBrowserRouter, RouterProvider } from "react-router-dom";
-// import Layout from './views/Layout.tsx'
 
 const DefaultLayout = React.lazy(() => import('./layout/Layout.tsx'))
 
@@ -22,7 +20,13 @@ function App() {
   }, [dispatch, isLogin])
   return (
     <BrowserRouter>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense
+        fallback={
+          <div className="w-screen h-screen flex flex-col justify-center items-center">
+            <Spinner aria-label="Extra large spinner" size="xl" />
+          </div>
+        }
+      >
         <Routes>
           <Route path="*" element={<DefaultLayout />} />
         </Routes>

@@ -11,50 +11,30 @@ import {
 } from 'flowbite-react'
 import type { FC } from 'react'
 import { useState, useEffect } from 'react'
-import { FaPlus } from 'react-icons/fa'
 import {
-  HiCog,
-  HiDotsVertical,
-  HiExclamationCircle,
-  HiHome,
   HiOutlineExclamationCircle,
   HiPencilAlt,
   HiTrash,
   HiUpload,
 } from 'react-icons/hi'
-import { useAttractions } from '@/api/attraction'
+import { useBlog } from '@/api/blog'
 import { getImageUrl } from '@/utils/index'
-// import NavbarSidebarLayout from '../../layouts/navbar-sidebar'
-// import { Pagination } from '../users/list'
 
 const WorkContentsPage: FC = function () {
-  const attractionsApi = useAttractions()
+  const blogApi = useBlog()
   const [works, setWorks] = useState()
   useEffect(() => {
-    async function getAttractions() {
-      const result = await attractionsApi.queryWorks()
+    async function getWorks() {
+      const result = await blogApi.queryWorks()
       setWorks([...result])
-      console.log('result', result)
     }
-    getAttractions()
+    getWorks()
   }, [])
   return (
     <>
       <div className="block items-center justify-between border-b border-gray-200 bg-white p-4 dark:border-gray-700 dark:bg-gray-800 sm:flex">
         <div className="mb-1 w-full">
           <div className="">
-            {/* <Breadcrumb className="mb-4">
-              <Breadcrumb.Item href="#">
-                <div className="flex items-center gap-x-3">
-                  <HiHome className="text-xl" />
-                  <span className="dark:text-white">Home</span>
-                </div>
-              </Breadcrumb.Item>
-              <Breadcrumb.Item href="/e-commerce/Contents">
-                E-commerce
-              </Breadcrumb.Item>
-              <Breadcrumb.Item>Contents</Breadcrumb.Item>
-            </Breadcrumb> */}
             <h1 className="text-xl font-semibold text-gray-900 dark:text-white sm:text-2xl">
               所有作品
             </h1>
@@ -281,9 +261,6 @@ const DeleteContentModal: FC = function () {
 }
 
 const ContentsTable: FC = function ({ tableData }) {
-  useEffect(() => {
-    console.log('tableData', tableData)
-  }, [tableData])
   return (
     <Table className="min-w-full divide-y divide-gray-200 dark:divide-gray-600">
       <Table.Head className="bg-gray-100 dark:bg-gray-700">
@@ -301,7 +278,10 @@ const ContentsTable: FC = function ({ tableData }) {
         {/* one Row Data */}
         {tableData &&
           tableData?.map((row) => (
-            <Table.Row className="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <Table.Row
+              key={row.title}
+              className="hover:bg-gray-100 dark:hover:bg-gray-700"
+            >
               <Table.Cell className="w-4 p-4">
                 <Checkbox />
               </Table.Cell>
@@ -309,12 +289,12 @@ const ContentsTable: FC = function ({ tableData }) {
                 <div className="text-base font-semibold text-gray-900 dark:text-white">
                   {row.title}
                 </div>
-                <div className="text-sm font-normal text-gray-500 dark:text-gray-400">
+                <div className="text-sm font-normal text-gray-500 dark:text-gray-400 max-w-[180px] text-nowrap truncate">
                   {row.tags.join(', ')}
                 </div>
               </Table.Cell>
               <Table.Cell className="whitespace-nowrap p-4 text-base font-medium text-gray-900 dark:text-white">
-                Vue
+                {row.tags[0]}
               </Table.Cell>
               <Table.Cell className="whitespace-nowrap p-4 text-base font-medium text-gray-900 dark:text-white">
                 {row.description}

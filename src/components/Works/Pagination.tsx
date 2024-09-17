@@ -16,7 +16,7 @@ function Pagination({
               .fill(null)
               .map((e, idx) => (
                 <>
-                  <li>
+                  <li key={e}>
                     <NavLink
                       to={'/works'}
                       aria-current={currentPage === idx + 1 ? 'page' : false}

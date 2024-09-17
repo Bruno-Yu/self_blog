@@ -1,63 +1,6 @@
-import { FunctionComponent } from 'react'
+import { useState, useEffect, FunctionComponent } from 'react'
 import ServiceCard from '../../../components/Home/ServiceCard'
-import Title from '../../../components/Home/Title'
-import { LiaReact, LiaVuejs } from 'react-icons/lia'
-
-const ICONS = {
-  Vue: LiaVuejs,
-  React: LiaReact,
-  Web_Layout: LiaVuejs,
-  Others: LiaReact,
-}
-
-const SERVICES = [
-  {
-    title: 'Vue',
-    icon: 'price-item-visual',
-    details: ['Vue3/Vue2', 'Nuxt3/Nuxt2', 'Vite', 'Pinia/Vuex'],
-  },
-  {
-    title: 'React',
-    icon: 'price-item-ui',
-    details: ['React 18', 'Vite', 'Redux', 'React Query'],
-  },
-  {
-    title: 'Web Layout',
-    icon: 'service-item-html&css',
-    details: [
-      'CSS/SCSS ',
-      'RWD',
-      'Tailwind CSS',
-      'Bootstrap 5',
-      'Element Plus',
-      'GSAP',
-    ],
-  },
-  {
-    title: 'Others',
-    icon: 'service-item-front-end',
-    details: ['Git', 'Figma', 'Basic unit test', 'Basic Linux', 'Basic SQL'],
-  },
-]
-
-// const SERVICES = [
-//   {
-//     title: '平面設計',
-//     imgUrl: 'price-item-visual',
-//   },
-//   {
-//     title: 'UI設計',
-//     imgUrl: 'price-item-ui',
-//   },
-//   {
-//     title: '切版服務',
-//     imgUrl: 'service-item-html&css',
-//   },
-//   {
-//     title: '前端開發',
-//     imgUrl: 'service-item-front-end',
-//   },
-// ]
+import { useBlog } from '@/api/blog'
 
 export type ServiceListType = {
   className?: string
@@ -66,6 +9,15 @@ export type ServiceListType = {
 const ServiceList: FunctionComponent<ServiceListType> = ({
   className = '',
 }) => {
+  const blogApi = useBlog()
+  const [skills, setSkills] = useState()
+  useEffect(() => {
+    async function getSkills() {
+      const result = await blogApi.querySkills()
+      setSkills([...result])
+    }
+    getSkills()
+  }, [])
   return (
     // bg-[url('@/assets/images/homepage-services-bg.png')]
     <div className="py-5  ">
@@ -75,13 +27,14 @@ const ServiceList: FunctionComponent<ServiceListType> = ({
         className={`container mx-auto min-[992px] max-w-[1296px] p-3 ${className}`}
       >
         <div className="flex-1 mx-auto flex justify-center flex-wrap content-start gap-6 max-w-full z-[1]">
-          {SERVICES.map((service, idx) => (
-            <ServiceCard
-              key={service.title}
-              title={service.title}
-              details={service.details}
-            />
-          ))}
+          {skills &&
+            skills?.map((service, idx) => (
+              <ServiceCard
+                key={service.title}
+                title={service.title}
+                details={service.details}
+              />
+            ))}
         </div>
       </div>
       {/* button */}
