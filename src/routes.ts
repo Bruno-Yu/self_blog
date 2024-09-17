@@ -50,13 +50,6 @@ const routes = [
     title: '登入',
   },
   {
-    path: `${import.meta.env.BASE_URL}users`,
-    exact: true,
-    name: 'Users',
-    element: Users,
-    title: '使用者管理',
-  },
-  {
     path: `${import.meta.env.BASE_URL}contents`,
     exact: true,
     name: 'Contact',
