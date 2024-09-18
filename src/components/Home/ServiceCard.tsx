@@ -38,7 +38,7 @@ const ServiceCard: FunctionComponent<ServiceCardType> = ({
 
   return (
     <div
-      className={`relative  flex-1 rounded-2xl overflow-hidden flex flex-col items-center justify-start py-20 px-5 box-border gap-6 min-w-[229px] max-w-[306px] h-[306px] text-left text-3xl text-white font-normal bg-[url('@/assets/images/service-item-bg.png')] group hover:py-10 hover:bg-none hover:border-4 hover:border-black   ${className}`}
+      className={`relative  flex-1 rounded-2xl overflow-hidden flex flex-col items-center justify-start py-20 px-5 box-border gap-6 min-w-[229px] max-w-[306px] h-[306px] text-left text-3xl text-white font-normal bg-[url('@/assets/images/service-item-bg.png')] group hover:py-10 hover:bg-none hover:ring-4 hover:ring-black hover:ring-inset   ${className}`}
     >
       {/* 内容容器 */}
       <div className="relative z-10 flex flex-col items-center justify-start gap-6 w-full h-full group-hover:gap-3">

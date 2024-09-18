@@ -8,7 +8,7 @@ function Card({ data, children, ...props }) {
           <img
             src={data.imgLink}
             alt={data.imgLink}
-            className="object-cover object-center w-full h-full rounded-lg"
+            className="object-cover object-center w-full h-full rounded-t-lg"
           />
         </div>
         <div className="pt-4 px-2">
