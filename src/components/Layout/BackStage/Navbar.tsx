@@ -11,7 +11,7 @@ const BackStageNavbar: FC = function () {
   const logout = () => {
     dispatch(userActions.toggle())
     Local.set('isLogin', false)
-    navigate('/self_blog')
+    navigate('/self_blog/')
   }
 
   return (

@@ -6,7 +6,6 @@ const Login = React.lazy(() => import('./views/FrontStage/Login/index'))
 const Contents = React.lazy(() => import('./views/BackStage/Works/index'))
 
 const routes = [
-  // {path: '/', exact: true, name: 'layout'},
   {
     path: `${import.meta.env.BASE_URL}`,
     exact: true,
@@ -59,7 +58,6 @@ const routes = [
 ]
 
 export const frontRoutes = [
-  // {path: '/', exact: true, name: 'layout'},
   {
     path: `${import.meta.env.BASE_URL}`,
     exact: true,
@@ -74,13 +72,6 @@ export const frontRoutes = [
     element: Works,
     title: '作品集',
   },
-  // {
-  //   path: `${import.meta.env.BASE_URL}service`,
-  //   exact: true,
-  //   name: 'Service',
-  //   element: Home,
-  //   title: '服務項目',
-  // },
   {
     path: 'https://bruno-yu.github.io/bruno_blog/',
     exact: true,
@@ -88,13 +79,6 @@ export const frontRoutes = [
     // element: Home,
     title: '部落格',
   },
-  // {
-  //   path: `${import.meta.env.BASE_URL}contact`,
-  //   exact: true,
-  //   name: 'Contact',
-  //   element: Home,
-  //   title: '聯絡我',
-  // },
   {
     path: `${import.meta.env.BASE_URL}login`,
     exact: true,
@@ -102,16 +86,24 @@ export const frontRoutes = [
     element: Login,
     title: '登入',
   },
+  // 當找不到前台路由時，重定向到 Home
+  {
+    path: '*',
+    element: Home,
+  },
 ]
 
 export const backRoutes = [
-  // {path: '/', exact: true, name: 'layout'},
   {
     path: `${import.meta.env.BASE_URL}contents`,
     exact: true,
     name: 'Contact',
     element: Contents,
     title: '作品',
+  },
+  {
+    path: '*',
+    element: Contents,
   },
 ]
 
